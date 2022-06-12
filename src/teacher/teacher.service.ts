@@ -40,21 +40,21 @@ export class TeacherService {
     const [teacher, index] = this.searchteacher(id); 
     const updatedteacher = {...teacher,...update};
     this.teachers[index] = updatedteacher;
-    return `Teacher details with #${id} is updated`;
+    return `Teacher details with id-${id} is updated`;
   }
 
   remove(id: number) {
     const index = this.searchteacher(id)[1];
     this.teachers.splice(index, 1);
-    return `Teacher details with #${id} is removed`;
+    return `Teacher details with id-${id} is removed`;
   }
 
-  searchteacher(studentid: number): [CreateTeacherDto, number] {
-    const studentIndex = this.teachers.findIndex(s=> s.id == studentid);
-    const student = this.teachers[studentIndex];
-    if(!student){
-        throw new NotFoundException('Could not find the Student detail');
+  searchteacher(id: number): [CreateTeacherDto, number] {
+    const teacherIndex = this.teachers.findIndex(s=> s.id == id);
+    const teacher = this.teachers[teacherIndex];
+    if(!teacher){
+        throw new NotFoundException('Could not find the teacher detail');
     }
-    return [student,studentIndex];
+    return [teacher,teacherIndex];
 }
 }
