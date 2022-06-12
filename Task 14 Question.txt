@@ -1,0 +1,55 @@
+Vineeth :
+Hi,
+
+Akhilesh Sarathkumar Vydurya  Mons 
+
+Assessment Test:
+
+1. Create a module, controller, service file for Teacher.
+2. Create the following REST routes:
+i). POST - To create a new teacher entry, pass the data in the request body, create a DTO for passing the data.
+ii). PATCH - To edit the teacher entry, pass the data in the request body, use the same DTO used for POST but keys should be made as optional, Pass the id of the entry as PATH parameter.
+iii). DELETE - To delete the teacher entry using a id, pass the id parameter as a PATH parameter.
+iv). GET - To get all the teacher entries, add a query parameter limit which should determine the number of entries returned from the request.
+v). GET - To retrieve the individual entry based on a id, pass a PATH parameter as id.
+
+3. Create a module, controller, service file for Student.
+4. Create the following REST routes:
+i). POST - To create a new student entry, pass the data in the request body, create a DTO for passing the data.
+ii). PATCH - To edit the student entry, pass the data in the request body, use the same DTO used for POST but keys should be made as optional, Pass the id of the entry as PATH parameter.
+iii). DELETE - To delete the student entry using a id, pass the id parameter as a PATH parameter.
+iv). GET - To get all the student entries, add a optional query parameter limit which should determine the number of entries returned from the request.( default should be all entries )
+v). GET - To retrieve the individual entry based on a id, pass a PATH parameter as id.
+
+DTO structure
+
+CreateStudentDTO - {
+   id: number
+   name: string
+   department: Dept
+   semester: number
+   division: string
+   age: number - Optional
+}
+
+CreateTeacherDTO - {
+    id: number
+   name: string
+   department: Dept
+   YOE: number
+   age: number - Optional
+}
+
+Enum definition
+
+Dept {
+ CS - Computer Science
+ ME - Mechanical
+ CE - Civil
+ EC - Electronics
+ EE - electrical
+}
+
+- Use Swagger and NestJS validation Pipe for the documentation and validation respectively.
+- Write the business logic in the service file of corresponding modules.
+- You can either connect to PostgreSQL database or use an array for the data storage.
